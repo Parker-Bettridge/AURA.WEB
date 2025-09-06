@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Create User - A.U.R.A</title>
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+<div class="panel">
+    <h2>Create New User</h2>
+    <form method="POST">
+        <p>Username:</p>
+        <input type="text" name="username" required><br>
+        <p>Password:</p>
+        <input type="password" name="password" required><br>
+        <p>Role:</p>
+        <select name="role">
+            <option value="Admin">Admin</option>
+            <option value="Moderator">Moderator</option>
+            <option value="Guest">Guest</option>
+        </select><br><br>
+        <button type="submit">Create</button>
+    </form>
+    <br>
+    <a href="/dashboard"><button>Back</button></a>
+</div>
+</body>
+</html>

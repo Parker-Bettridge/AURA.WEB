@@ -1,0 +1,41 @@
+body {
+    background-color: black;
+    color: limegreen;
+    font-family: monospace;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.panel {
+    border: 2px solid limegreen;
+    padding: 20px;
+    width: 600px;
+    text-align: center;
+    box-shadow: 0 0 20px limegreen;
+}
+
+h2, h3 {
+    margin: 10px 0;
+}
+
+input, select, button {
+    background: black;
+    color: limegreen;
+    border: 1px solid limegreen;
+    padding: 5px;
+    margin: 5px;
+    font-family: monospace;
+}
+
+button:hover {
+    background: limegreen;
+    color: black;
+    cursor: pointer;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+}

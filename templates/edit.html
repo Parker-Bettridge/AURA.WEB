@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Edit User - A.U.R.A</title>
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+<div class="panel">
+    <h2>Edit User: {{ user }}</h2>
+    <form method="POST">
+        <p>New Username:</p>
+        <input type="text" name="new_username" value="{{ user }}"><br>
+        <p>New Password:</p>
+        <input type="password" name="new_password"><br>
+        <p>New Role:</p>
+        <select name="new_role">
+            <option value="Admin" {% if role == "Admin" %}selected{% endif %}>Admin</option>
+            <option value="Moderator" {% if role == "Moderator" %}selected{% endif %}>Moderator</option>
+            <option value="Guest" {% if role == "Guest" %}selected{% endif %}>Guest</option>
+        </select><br><br>
+        <button type="submit">Save Changes</button>
+    </form>
+    <br>
+    <a href="/dashboard"><button>Back</button></a>
+</div>
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Dashboard - A.U.R.A</title>
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+<div class="panel">
+    <h2>Welcome, {{ username }} ({{ role }})</h2>
+
+    {% if role == "Admin" %}
+    <a href="/create"><button>Create User</button></a>
+    {% endif %}
+
+    <h3>Users:</h3>
+    <ul>
+    {% for u, r in combined %}
+        <li>{{ u }} ({{ r }})
+        {% if role == "Admin" and u != "Admin" %}
+            - <a href="/delete/{{ u }}"><button>Delete</button></a>
+            - <a href="/edit/{{ u }}"><button>Edit</button></a>
+        {% endif %}
+        </li>
+    {% endfor %}
+    </ul>
+
+    <br>
+    <a href="/logout"><button>Logout</button></a>
+</div>
+</body>
+</html>
